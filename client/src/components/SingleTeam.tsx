@@ -17,6 +17,7 @@ export const SingleTeam = () => {
 
   const getTeamDrivers = async () => {
     const { data } = await getDrivers(id!);
+    console.log(data);
     setDrivers(data);
   };
 
@@ -49,16 +50,15 @@ export const SingleTeam = () => {
           <img src={team!.image_url} alt="team_img" height={400} />
           <h3>Drivers:</h3>
           {drivers ? (
-            drivers === [] ? (
+            drivers.length ? (
               <>
-                {" "}
                 {drivers.map((driver) => (
-                  <Link to={`/drivers/${driver._id}`}>
-                    <h4 key={driver._id}>
+                  <Link key={driver._id} to={`/drivers/${driver._id}`}>
+                    <h4>
                       {driver.name + " " + driver.surname}
                     </h4>
                   </Link>
-                ))}{" "}
+                ))}
               </>
             ) : (
               <h4>Brak danych</h4>
