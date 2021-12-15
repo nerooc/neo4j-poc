@@ -42,4 +42,4 @@ CREATE (d)-[won:WON_AT]->(r)
 
 // Delete relations
 MATCH (n:Driver {name: 'Sergio'})-[r]->()
-DELETE r
+DETACH DELETE r

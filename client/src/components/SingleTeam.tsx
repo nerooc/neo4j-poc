@@ -39,9 +39,9 @@ export const SingleTeam = () => {
                     <ReactLoading type={'bars'} color={'blue'} height={300} width={300} />
                 </>) : (<div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
                     <h1>{team!.name} </h1>
-                    <img src={team!.image_url} alt="team_img" height={400} width={600} />
+                    <img src={team!.image_url} alt="team_img" height={400} />
                     <h3>Drivers:</h3>
-                    {drivers ? <> {drivers.map(driver => <Link to={`/drivers/${driver._id}`}><h4 key={driver._id}>{driver.name + ' ' + driver.surname}</h4></Link>)} </> : <h3>Loading drivers...</h3>}
+                    {drivers ?  drivers === [] ? <> {drivers.map(driver => <Link to={`/drivers/${driver._id}`}><h4 key={driver._id}>{driver.name + ' ' + driver.surname}</h4></Link>)} </> : <h4>Brak danych</h4> : <h3>Loading drivers...</h3>}
                 </div>)
             }
         </>

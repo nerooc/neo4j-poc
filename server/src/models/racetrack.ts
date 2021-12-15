@@ -37,7 +37,7 @@ const findByIdAndUpdate = async (id, racetrack) => {
 };
 
 const findByIdAndDelete = async (id) => {
-  await session.run(`MATCH (r:Racetrack {_id : '${id}'}) DELETE r`);
+  await session.run(`MATCH (r:Racetrack {_id : '${id}'}) DETACH DELETE r`);
   return await findAll();
 };
 

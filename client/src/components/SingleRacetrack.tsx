@@ -48,7 +48,7 @@ export const SingleRacetrack = () => {
                     <ReactLoading type={'bars'} color={'blue'} height={300} width={300} />
                 </>) : (<div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
                     <h1>{racetrack!.name} </h1>
-                    <img src={racetrack!.image_url} alt="racetrack_img" height={400} width={600} />
+                    <img src={racetrack!.image_url} alt="racetrack_img" height={400} />
                     {winner ? <h3>Winner: {winner.name + ' ' + winner.surname} </h3> : <h3>Loading winner...</h3>}
                     {winner && winner.name === 'Not' && drivers && <><h3>Who won the race? (click to select)</h3>{drivers.map(driver => <p onClick={async () => { await setWinner(id!, driver._id!); await getRacetrackWinner();}} key={driver._id}>{driver.name + ' ' + driver.surname}</p>)}</>}
                 </div>)

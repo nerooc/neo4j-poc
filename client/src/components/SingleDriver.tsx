@@ -26,7 +26,7 @@ export const SingleDriver = () => {
                     <ReactLoading type={'bars'} color={'blue'} height={300} width={300} />
                 </>) : (<div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
                     <h1>{driver!.name} {driver!.surname}</h1>
-                    <img src={driver!.image_url} alt="driver_img" height={600} width={400} />
+                    <img src={driver!.image_url} alt="driver_img" height={400} />
                 </div>)
             }
         </>

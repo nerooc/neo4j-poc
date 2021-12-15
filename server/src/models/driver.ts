@@ -36,7 +36,7 @@ const findByIdAndUpdate = async (id, driver) => {
 };
 
 const findByIdAndDelete = async (id) => {
-  await session.run(`MATCH (d:Driver {_id : '${id}'}) DELETE d`);
+  await session.run(`MATCH (d:Driver {_id : '${id}'}) DETACH DELETE d`);
   return await findAll();
 };
 

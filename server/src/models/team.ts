@@ -37,7 +37,7 @@ const findByIdAndUpdate = async (id, team) => {
 };
 
 const findByIdAndDelete = async (id) => {
-  await session.run(`MATCH (t:Team {_id : '${id}'}) DELETE t`);
+  await session.run(`MATCH (t:Team {_id : '${id}'}) DETACH DELETE t`);
   return await findAll();
 };
 
