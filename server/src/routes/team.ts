@@ -30,4 +30,9 @@ team.delete('/:id', async (req, res) => {
   res.json(result);
 });
 
+team.get('/drivers/:id', async (req, res) => {
+  const result = await teamModel.findDrivers(req.params.id);
+  res.json(result);
+});
+
 module.exports = team;

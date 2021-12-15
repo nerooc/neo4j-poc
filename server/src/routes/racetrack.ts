@@ -33,4 +33,15 @@ racetrack.delete('/:id', async (req, res) => {
   res.json(result);
 });
 
+racetrack.post('/winner/:racetrackId/:driverId', async (req, res) => {
+  console.log(req.params);
+  const result = await racetrackModel.setWinner(req.params.racetrackId, req.params.driverId);
+  res.json(result);
+});
+
+racetrack.get('/winner/:id', async (req, res) => {
+  const result = await racetrackModel.findWinner(req.params.id);
+  res.json(result);
+});
+
 module.exports = racetrack;

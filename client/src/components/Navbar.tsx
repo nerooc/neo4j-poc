@@ -27,11 +27,6 @@ export const Navbar = () => (
           width: 500,
         }}
       >
-        <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
-          <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-            Home
-          </Typography>
-        </Link>
         <Link to='/drivers' style={{ color: 'white', textDecoration: 'none' }}>
           <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
             Drivers

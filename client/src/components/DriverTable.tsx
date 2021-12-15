@@ -15,6 +15,7 @@ import { IDriver } from '../types';
 import { deleteDriver } from '../api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 interface Props {
   drivers: IDriver[];
@@ -47,12 +48,15 @@ export const DriverTable: React.FC<Props> = ({ drivers, getDrivers }) => {
             </TableHead>
             <TableBody>
               {drivers.map((driver, idx) => (
+                
                 <TableRow
                   key={idx}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell component='th' scope='row'>
-                    {driver.name}
+                    <Link to={"/drivers/" + driver._id}>
+                      {driver.name}
+                    </Link>
                   </TableCell>
                   <TableCell align='right'>{driver.surname}</TableCell>
                   <TableCell align='right'>

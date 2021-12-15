@@ -41,10 +41,17 @@ const findByIdAndDelete = async (id) => {
   return await findAll();
 };
 
+const findDrivers = async (id) => {
+  const result = await session.run(`MATCH (d: Driver)-[r:DRIVES_FOR]-(t:Team {_id : '${id}'}) RETURN d`)
+  console.log(result);
+  return result.records.map((i) => i.get('d').properties);
+}
+
 module.exports = {
   findAll,
   findById,
   create,
   findByIdAndUpdate,
   findByIdAndDelete,
+  findDrivers
 };

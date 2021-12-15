@@ -15,6 +15,7 @@ import { ITeam } from '../types';
 import { deleteTeam } from '../api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 interface Props {
   teams: ITeam[];
@@ -51,7 +52,9 @@ export const TeamTable: React.FC<Props> = ({ teams, getTeams }) => {
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell component='th' scope='row'>
-                    {team.name}
+                    <Link to={"/team/" + team._id}>
+                      {team.name}
+                    </Link>
                   </TableCell>
                   <TableCell align='right'>
                     <Button

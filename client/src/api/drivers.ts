@@ -9,14 +9,21 @@ export const getAllDrivers = async () => {
   return response;
 };
 
-export const createNewDriver = (data: IDriver) => {
+export const createNewDriver = async (data: IDriver) => {
   const response: Promise<AxiosResponse> = axiosInstance.post(`/driver/`, data);
 
   return response;
 };
 
-export const deleteDriver = (id: string) => {
+export const deleteDriver = async (id: string) => {
   const response: Promise<AxiosResponse> = axiosInstance.delete(`/driver/${id}`);
+
+  return response;
+}
+
+export const getDriver = async (id: string) => {
+  const response: Promise<AxiosResponse<IDriver>> =
+    axiosInstance.get(`/driver/${id}`);
 
   return response;
 }

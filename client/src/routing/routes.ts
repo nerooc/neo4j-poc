@@ -1,11 +1,13 @@
-import { Drivers, Home, Racetracks, Teams } from "../pages";
+import { SingleDriver, SingleRacetrack, SingleTeam } from '../components';
+import { Drivers, Racetracks, Teams } from "../pages";
 import { IRoute } from "../types";
 
 export const routes: IRoute[] = [
+
     {
         path: '/',
         exact: true,
-        component: Home
+        component: Drivers
     },
     {
         path: '/drivers',
@@ -21,5 +23,20 @@ export const routes: IRoute[] = [
         path: '/teams',
         exact: true,
         component: Teams
+    },
+    {
+        path: '/drivers/:id',
+        exact: true,
+        component: SingleDriver
+    },
+    {
+        path: '/racetrack/:id',
+        exact: true,
+        component: SingleRacetrack
+    },
+    {
+        path: '/team/:id',
+        exact: true,
+        component: SingleTeam
     },
 ]

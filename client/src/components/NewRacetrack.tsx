@@ -9,7 +9,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const defaultValues = {
   name: '',
-  surname: '',
   image_url: '',
 };
 
@@ -51,17 +50,7 @@ export const NewRacetrack = ({ getRacetracks }) => {
             fullWidth
           />
         </Grid>
-        <Grid style={{ margin: '15px 0' }} item>
-          <TextField
-            id='surname-input'
-            name='surname'
-            label='Surname'
-            type='text'
-            value={formValues.surname}
-            onChange={handleInputChange}
-            fullWidth
-          />
-        </Grid>
+        
         <Grid style={{ margin: '15px 0' }} item>
           <TextField
             id='img-url-input'

@@ -41,9 +41,28 @@ const findByIdAndDelete = async (id) => {
   return await findAll();
 };
 
+const setWinner = async (racetrackId, driverId) => {
+  const result = await session.run(`MATCH (d: Driver), (r: Racetrack)
+  WHERE d._id = '${driverId}' AND r._id = '${racetrackId}'
+  CREATE (d)-[won:WON_AT]->(r)
+  RETURN r`);
+  
+  return result.records[0].get('r').properties;
+}
+
+const findWinner = async (id) => {
+  const result = await session.run(`MATCH (u)-[w: WON_AT]-(r:Racetrack {_id : '${id}'}) RETURN u`)
+  if (!result.records[0]) {
+    return { name: 'Not', surname: 'set', image_url: '' };
+  }
+  return result.records[0].get('u').properties;
+}
+
 module.exports = {
   findAll,
   findById,
+  findWinner,
+  setWinner,
   create,
   findByIdAndUpdate,
   findByIdAndDelete,

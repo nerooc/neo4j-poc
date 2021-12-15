@@ -9,7 +9,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const defaultValues = {
   name: '',
-  surname: '',
   image_url: '',
 };
 
@@ -48,17 +47,6 @@ export const NewTeam = ({ getTeams }) => {
             value={formValues.name}
             onChange={handleInputChange}
             sx={{ margin: '10px 0' }}
-            fullWidth
-          />
-        </Grid>
-        <Grid style={{ margin: '15px 0' }} item>
-          <TextField
-            id='surname-input'
-            name='surname'
-            label='Surname'
-            type='text'
-            value={formValues.surname}
-            onChange={handleInputChange}
             fullWidth
           />
         </Grid>
