@@ -1,10 +1,10 @@
-import { Typography } from '@mui/material';
-import { Box } from '@mui/system';
-import React from 'react';
-import { getAllTeams } from '../api';
+import { Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import React from "react";
+import { getAllTeams } from "../api";
 
-import { TeamTable, NewTeam } from '../components';
-import { ITeam } from '../types';
+import { TeamTable, NewTeam } from "../components";
+import { ITeam } from "../types";
 
 export const Teams = () => {
   const [teams, setTeams] = React.useState<ITeam[]>();
@@ -19,22 +19,22 @@ export const Teams = () => {
   }, []);
 
   return (
-    <Box display='flex'>
-      <Box sx={{ width: '50%', margin: '50px', textAlign: 'left' }}>
+    <Box display="flex">
+      <Box sx={{ width: "50%", margin: "50px", textAlign: "left" }}>
         <Typography
-          variant='h3'
-          component='h3'
-          sx={{ flexGrow: 1, margin: '20px 0' }}
+          variant="h3"
+          component="h3"
+          sx={{ flexGrow: 1, margin: "20px 0" }}
         >
           Teams
         </Typography>
         <TeamTable teams={teams!} getTeams={() => getTeams()} />
       </Box>
-      <Box sx={{ width: '50%', margin: '50px', textAlign: 'left' }}>
+      <Box sx={{ width: "50%", margin: "50px", textAlign: "left" }}>
         <Typography
-          variant='h3'
-          component='h3'
-          sx={{ flexGrow: 1, margin: '20px 0' }}
+          variant="h3"
+          component="h3"
+          sx={{ flexGrow: 1, margin: "20px 0" }}
         >
           New team
         </Typography>

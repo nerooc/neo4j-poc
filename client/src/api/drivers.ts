@@ -1,6 +1,6 @@
-import { AxiosResponse } from 'axios';
-import { IDriver } from '../types';
-import { axiosInstance } from './axiosInstance';
+import { AxiosResponse } from "axios";
+import { IDriver } from "../types";
+import { axiosInstance } from "./axiosInstance";
 
 export const getAllDrivers = async () => {
   const response: Promise<AxiosResponse<IDriver[]>> =
@@ -16,14 +16,17 @@ export const createNewDriver = async (data: IDriver) => {
 };
 
 export const deleteDriver = async (id: string) => {
-  const response: Promise<AxiosResponse> = axiosInstance.delete(`/driver/${id}`);
+  const response: Promise<AxiosResponse> = axiosInstance.delete(
+    `/driver/${id}`
+  );
 
   return response;
-}
+};
 
 export const getDriver = async (id: string) => {
-  const response: Promise<AxiosResponse<IDriver>> =
-    axiosInstance.get(`/driver/${id}`);
+  const response: Promise<AxiosResponse<IDriver>> = axiosInstance.get(
+    `/driver/${id}`
+  );
 
   return response;
-}
+};

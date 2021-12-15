@@ -1,15 +1,15 @@
 //@ts-nocheck
-import React, { useState } from 'react';
-import Grid from '@material-ui/core/Grid';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import { createNewTeam } from '../api';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React, { useState } from "react";
+import Grid from "@material-ui/core/Grid";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import { createNewTeam } from "../api";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const defaultValues = {
-  name: '',
-  image_url: '',
+  name: "",
+  image_url: "",
 };
 
 export const NewTeam = ({ getTeams }) => {
@@ -31,42 +31,42 @@ export const NewTeam = ({ getTeams }) => {
       await getTeams();
       toast(`${formValues.name} has been added!`);
     } catch (e) {
-      toast('Something went wrong!');
+      toast("Something went wrong!");
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <Grid container alignItems='space-between' direction='column'>
-        <Grid style={{ margin: '15px 0' }} item>
+      <Grid container alignItems="space-between" direction="column">
+        <Grid style={{ margin: "15px 0" }} item>
           <TextField
-            id='name-input'
-            name='name'
-            label='Name'
-            type='text'
+            id="name-input"
+            name="name"
+            label="Name"
+            type="text"
             value={formValues.name}
             onChange={handleInputChange}
-            sx={{ margin: '10px 0' }}
+            sx={{ margin: "10px 0" }}
             fullWidth
           />
         </Grid>
-        <Grid style={{ margin: '15px 0' }} item>
+        <Grid style={{ margin: "15px 0" }} item>
           <TextField
-            id='img-url-input'
-            name='image_url'
-            label='Image URL'
-            type='text'
+            id="img-url-input"
+            name="image_url"
+            label="Image URL"
+            type="text"
             value={formValues.image_url}
             onChange={handleInputChange}
             fullWidth
           />
         </Grid>
         <Button
-          style={{ margin: '15px 0' }}
-          variant='contained'
-          color='primary'
-          type='submit'
-          sx={{ margin: '10px 0' }}
+          style={{ margin: "15px 0" }}
+          variant="contained"
+          color="primary"
+          type="submit"
+          sx={{ margin: "10px 0" }}
         >
           Submit
         </Button>

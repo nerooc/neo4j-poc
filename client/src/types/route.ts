@@ -1,5 +1,5 @@
 export type IRoute = {
-    path: string;
-    exact: boolean;
-    component: any;
-}
+  path: string;
+  exact: boolean;
+  component: any;
+};
